@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  discord-pwd:
+    build: ./bot
+    volumes:
+      - ./bot:/usr/src/app
+    env_file: .env
+    restart: unless-stopped
+    command: ["npm", "start"]
